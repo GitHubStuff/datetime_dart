@@ -1,5 +1,5 @@
 name: datetime_dart
-description: "A new Flutter package project."
+description: "Collection of Cubits and helpers for Date Time"
 version: 0.0.1
 home_page: http://www.icodeforyou.com
 publish_to: none # Remove this line if you wish to publish to pub.dev
@@ -11,8 +11,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  ui_extensions_flutter:
-    git: https://github.com/GitHubStuff/ui_extensions_flutter.git
+  flutter_bloc: ^8.1.4
+  intl: ^0.19.0
+  oktoast: ^3.4.0
 
 dev_dependencies:
   flutter_test:

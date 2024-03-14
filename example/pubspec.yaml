@@ -14,6 +14,7 @@ dependencies:
     sdk: flutter
   ##app_settings: ^5.1.1 # A Flutter plugin for opening iOS and Android phone settings from an app.
   ##cupertino_icons: ^1.0.6 # This is an asset repo for Cupertino widgets.
+  flutter_bloc: ^8.1.4
   flutter_modular: ^6.3.2 # Smart project structure with dependency injection and route management
   ui_extensions_flutter:
     git: https://github.com/GitHubStuff/ui_extensions_flutter.git

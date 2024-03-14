@@ -1,49 +1,130 @@
-# SETUP
-
-- Find/Replace `datetime_dart` to name of the name of the package (ex: `flutter_rocks`)
-- Addess the *TODO:* in the **/example** folder by adding code from the package
-- If needed/wanted follow the instructions in the **/example/README.md** to have the example app more reflective of your package and show off features of widget packages.
-
-<!--
-The comments below are from the Flutter/Dart package generation. Feel free to use or ignore
--->
-
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+# datetime_dart
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+**RepeatingTimerCubit**: A BLoC (Business Logic Component) class for managing repeating timers.
+
+***DateTime* extensions**: A collection of utility functions and extensions for working with date and time in Dart.
+
+**DateTimeInterval**: A utility class for calculating the interval between two DateTime objects. Including years and months, beyond the features of *Duration()*.
+
+**DateTimeUnit**: Enum for parts of DateTime() [*(year, month, day hour, minute second, msec, usec)*]. And several methods for formatting *DateTime()*, and other helper methods to precisely calculate intervals with various rounding and percision.
+
+**DateTimeAlarm**: A Dart class for creating and managing date and time alarms.
+
+**DateTimeToast**: A utility class for displaying toast notifications with date and time information. *See* [datetime_toast.dart](lib/widgets/datetime_toast.dart) for setup instructions!
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+If using **DateTimeToast** the following needs to be added to *main.dart*:
+
+```dart
+// Import package
+import 'package:datetime_dart/datetime_dart.dart';
+
+    :
+    :
+    
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  runApp(
+    ModularApp(
+      module: AppModule(),
+      // Wrap the first widget with DateTimeToast.setUp()
+      child: DateTimeToast.setUp(child: const MyApp()),
+    ),
+  );
+}
+```
+
+**/example/lib/screen/home_scaffold.dart** has an example of how to setup an alarm:
+
+```dart
+/// Declare an alarm
+DateTimeAlarm? myAlarm;
+
+/// 1 - In code create an alarm
+/// 2 - Start the alarm
+/// 3 - Listen for the alarm
+/// 4 - Stop the alarm
+
+
+
+   if (myAlarm == null) {
+      // 1 - CREATE
+      myAlarm = DateTimeAlarm(
+        alarmDateTime:
+            systemTime.add(const Duration(seconds: 7)), // Set the alarm time
+        truncatedTimeUnit: DateTimeUnit.msec,
+        systemDateTime: systemTime, // Customize time precision
+      );
+      
+      // 2 - START
+      myAlarm?.start();
+      debugPrint('Alarm triggered at $systemTime');
+      
+      // 3 - LISTEN
+      myAlarm?.onAlarm.listen((dateTime) {
+        if (dateTime != null) {
+          debugPrint('Alarm triggered at $dateTime');
+          DateTimeToast().show(message: 'Now is $dateTime');
+        } else {
+          debugPrint('Alarm stopped');
+        }
+      });
+      
+      // 4 - STOP
+      Future.delayed(const Duration(seconds: 20), () {
+        myAlarm?.stop();
+      });
+    }
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+*NOTE: See **/example** for more*
+
+Add to **pubspec.yaml**
+
+```yaml
+dependencies:
+  datetime_dart:
+    git: https://github.com/GitHubStuff/datetime_dart.git
+```
 
 ```dart
-const like = 'sample';
+RepeatingTimerCubit rtc = RepeatingTimerCubit();
+rtc.start();  //Start repeating intervals
+rtc.stop(); //Stop repeating
+
+//if time == null returns current time as utc
+DateTime utc = makeUtc(DateTime? time); 
+
+//if time == null returns current local time
+DateTime local = makeLocal(DateTime? time);
+
+// Truncates the DateTime to the specified DateTimeUnit precision.
+// Default is microsecond.
+DateTime? trunk = time?.truncate(at: DateTimeUnit.msec);
+
+// Formatted String (DateTime ext)
+// const kDefautlFormatString = 'EEE d-MMM-yyyy h:mm:ss a';
+String formattedDateTime = dateTime.formatted(String format = kDefautlFormatString,
+    bool asUtc = false,);
+
 ```
+
+## Note
+
+There many more methods and features that help with measuring tasks related to **DateTime()**, its intervals, durations, alarms, event notifications, and states.
+
+There is alot of methods that allow for a ***systemDateTime*** parameter.. This is to allow for setting the time to fixed value for unit and integration testing
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+This repo is hosted on GitHub: [datetime_dart](https://github.com/GitHubStuff/datetime_dart.git). Please comment and report issues there.
+
+## Finally
+
+Be kind to each other.
