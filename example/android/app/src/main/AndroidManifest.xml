@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="reverse.domain.bundleSuffix">
+    package="com.icodeforyou.datetime_dart">
    <application
-        android:label="MyAppName"
+        android:label="DateTime Demo"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity

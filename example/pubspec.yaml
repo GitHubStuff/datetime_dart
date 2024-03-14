@@ -1,4 +1,4 @@
-name: app_template
+name: datetime_demo
 description: A new Flutter template.
 
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
@@ -17,8 +17,8 @@ dependencies:
   flutter_modular: ^6.3.2 # Smart project structure with dependency injection and route management
   ui_extensions_flutter:
     git: https://github.com/GitHubStuff/ui_extensions_flutter.git
-  package_template:
-    path: ../../package_template
+  datetime_dart:
+    path: ../../datetime_dart
 
 # dart run build_runner build -d
 dev_dependencies:
