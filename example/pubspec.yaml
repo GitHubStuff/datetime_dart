@@ -35,16 +35,16 @@ flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
   remove_alpha_ios: true
-  image_path: "assets/images/ltmm1024x1024.png"
+  image_path: "assets/images/elapser1024x1024.png"
   macos:
     generate: true
-    image_path: "assets/images/ltmm1024x1024.png"
+    image_path: "assets/images/elapser1024x1024.png"
   web:
     generate: true
-    image_path: "assets/images/ltmm1024x1024.png"
+    image_path: "assets/images/elapser1024x1024.png"
   windows:
     generate: true
-    image_path: "assets/images/ltmm1024x1024.png"
+    image_path: "assets/images/elapser1024x1024.png"
 
 # Element of flutter_gen https://pub.dev/packages/flutter_gen/install
 # '% dart pub global activate flutter_gen'

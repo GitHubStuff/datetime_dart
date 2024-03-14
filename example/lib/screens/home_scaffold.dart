@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../gen/assets.gen.dart';
 
+// ignore: unused_import
 import 'package:datetime_dart/datetime_dart.dart';
 
 class HomeScaffold extends StatelessWidget {
@@ -18,10 +19,6 @@ class HomeScaffold extends StatelessWidget {
   }
 
   Widget homeWidget(BuildContext context) {
-    //TODO: Replace with your own code
-    // ignore: non_constant_identifier_names
-    final PackageTemplate datetime_dart = PackageTemplate();
-    debugPrint('$datetime_dart');
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -31,7 +28,7 @@ class HomeScaffold extends StatelessWidget {
             height: 200,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Assets.images.ltmm1024x1024.image(),
+              child: Assets.images.elapser1024x1024.image(),
             ),
           ),
         ],

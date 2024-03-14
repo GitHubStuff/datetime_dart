@@ -19,23 +19,23 @@ A complete, self-contained, Flutter app that is the starting point for an **App*
 - Find/Replace `com.icodeforyou` with the projects **reverse domain** that the start of the apps' identifier (ex: `com.apple`)
 - Find/Replace `datetime_dart` with bundle id (ex: `my_spiffy_app`) **[using the folder name is ideal]**
 - Find/Replace `datetimeDart` for Apple bundles as iOS/MacOS do like '_'. **[ideal is folder name to lower-camel case (ex: `mySpiffyApp`)]**
-- The image `/assets/images/ltmm1024x1024.png` is a placeholder image to generate application icons. In the `pubspec.yaml` file is section marked *flutter_icons*:
+- The image `/assets/images/elapser1024x1024.png` is a placeholder image to generate application icons. In the `pubspec.yaml` file is section marked *flutter_icons*:
 
   ```dart
   flutter_icons:
   android: 'launcher_icon'
   ios: true
   remove_alpha_ios: true
-  image_path: 'assets/images/ltmm1024x1024.png'
+  image_path: 'assets/images/elapser1024x1024.png'
   macos:
     generate: true
-    image_path: 'assets/images/ltmm1024x1024.png'
+    image_path: 'assets/images/elapser1024x1024.png'
   web:
     generate: true
-    image_path: 'assets/images/ltmm1024x1024.png'
+    image_path: 'assets/images/elapser1024x1024.png'
   windows:
     generate: true
-    image_path: 'assets/images/ltmm1024x1024.png'
+    image_path: 'assets/images/elapser1024x1024.png'
 
   ```
 
@@ -47,7 +47,7 @@ A complete, self-contained, Flutter app that is the starting point for an **App*
 
   generating icons for iOS/Mac/Android/Web and even Windows *(Widows sucks but I guess someone has to do it.)*
 
-  NOTE: The sample app already has the [ltmm1024x1024](assets/images/ltmm1024x1024.png). The best images are 1024x1024. Replace the image and make sure the `image_path` in `pubspec.yaml` is updated and then run the
+  NOTE: The sample app already has the [elapser1024x1024](assets/images/elapser1024x1024.png). The best images are 1024x1024. Replace the image and make sure the `image_path` in `pubspec.yaml` is updated and then run the
   `% dart run flutter_launcher_icons` again.
 
 - From the terminal in the IDE:
